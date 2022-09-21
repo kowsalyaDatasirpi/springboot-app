@@ -1,0 +1,47 @@
+#Database Configuration
+spring:
+  datasource:
+    url: jdbc:mysql://trojandevdb1.cerph5j4goq3.ap-south-1.rds.amazonaws.com:3306/sample
+    username: ${DB_USER_NAME:devdb}
+    password: Trojan123!
+    driverClassName: com.mysql.cj.jdbc.Driver
+  output:
+    ansi:
+      enabled: ALWAYS
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+      wrap-root-value: true
+
+
+
+server:
+  port: 8088
+  address: 0.0.0.0
+
+#Logging Configuration
+logging:
+  file: main.log
+  path: log
+  level:
+    root: INFO
+    org.springframework.security: INFO
+    com.datasirpi.appointment.manager.user.service: INFO
+
+dependency:
+  groupId: org.springframework.boot
+  artifactId: spring-boot-starter-security
+
+elasticsearch:
+  clustername: docker-cluster
+  host: localhost
+  port: 9300
+
+trojan:
+  encrypt:
+    ivparam: mtsyScollAnajorT
+    key: TrojanAuthSystm
+
+
+
+
