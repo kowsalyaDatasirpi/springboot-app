@@ -5,6 +5,9 @@ pipeline {
         dockerImage = '' 
     }
     agent any 
+    triggers{
+        cron(' 0 8 * * *')
+    }
     stages { 
         stage('Building our image') { 
             steps {
