@@ -19,7 +19,7 @@ pipeline {
      stage('SonarQube analysis') {
           steps {
                  withSonarQubeEnv('sonarqube') {
-                     sh "./gradlew sonarqube -PbuildNumber=${env.BUILD_ID} -PbranchName=${env.BRANCH_NAME}"
+                     sh "./gradlew sonarqube"
                  }
             }
        } 
