@@ -8,15 +8,15 @@ pipeline {
  // triggers{
  //       cron('45 9 * * *')
  //   }
-    stage('Build') {
-      steps {
-        sh 'java -version'
-        sh 'chmod +x gradlew'
-        sh "./gradlew build -PbuildNumber=${env.BUILD_ID} -PbranchName=${env.BRANCH_NAME}"
-      }
-    }
-    
     stages { 
+      stage('Build') {
+         steps {
+            sh 'java -version'
+            sh 'chmod +x gradlew'
+           sh "./gradlew build -PbuildNumber=${env.BUILD_ID} -PbranchName=${env.BRANCH_NAME}"
+       }
+    }
+        
         stage('Building our image') { 
             steps {
                   script { 
