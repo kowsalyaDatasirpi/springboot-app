@@ -27,17 +27,20 @@ pipeline {
      stage('SonarQube analysis') {
           steps {
                  withSonarQubeEnv('sonarqube') {
-                     sh "./gradlew sonarqube"
+                     sh "./gradlew sonarqube \
+                        -Dsonar.projectKey=demo-sb-app \
+                        -Dsonar.host.url=https://sonarqube.trojanae.com \
+                        -Dsonar.login=fe7ecd4cf0547132ec9093ea8ed9a45808380abc"
                  }
             }
        } 
-     stage("Quality Gate") {
-            steps {
-                  timeout(time: 1, unit: 'MINUTES') {
-                           waitForQualityGate abortPipeline: true
-              }         
-            }
-          }  
+  //   stage("Quality Gate") {
+  //          steps {
+  //                timeout(time: 1, unit: 'MINUTES') {
+  //                         waitForQualityGate abortPipeline: true
+  //            }         
+  //         }
+  //       }  
     
     
     stage('pushes our image') { 
