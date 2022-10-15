@@ -34,19 +34,26 @@ pipeline {
                  }
             }
        } 
- 
-    
-    
-    stage('pushes our image') { 
-        steps { 
-            script { 
-                docker.withRegistry( '', registryCredential ) { 
-                        dockerImage.push() 
-                    }
-                } 
-            }
         
-        }  
+     stage("Quality Gate") {
+          steps {
+             timeout(time: 2, unit: 'MINUTES') {
+                 waitForQualityGate abortPipeline: true
+             }         
+           }
+         }
+    
+    
+//    stage('pushes our image') { 
+//        steps { 
+//            script { 
+//                docker.withRegistry( '', registryCredential ) { 
+//                        dockerImage.push() 
+//                    }
+//                } 
+//            }
+//       
+//        }  
         
     }
 }
