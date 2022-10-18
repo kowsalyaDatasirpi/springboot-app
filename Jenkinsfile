@@ -17,13 +17,13 @@ pipeline {
        }
     }
         
-    stage('Test'){
-      steps{
-        withGradle {
-          sh './gradlew test'
-        }
-      }  
-    }
+//    stage('Test'){
+//      steps{
+//        withGradle {
+//          sh './gradlew test'
+//        }
+//      }  
+//    }
         
         stage('Building our image') { 
             steps {
