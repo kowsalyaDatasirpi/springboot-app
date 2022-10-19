@@ -33,5 +33,8 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
-	testLogging.showStandardStream=true
+//	testLogging.showStandardStream=true
+	scanForTestClasses = false
+        include "**/*sampleTest.class" // whatever Ant pattern matches your test class files
+
 }
