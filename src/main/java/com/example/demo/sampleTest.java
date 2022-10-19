@@ -1,4 +1,4 @@
-public class sampletest {
+public class sampleTest {
 
     public int add (int numberA, int numberB){
 
