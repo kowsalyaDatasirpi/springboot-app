@@ -17,13 +17,13 @@ pipeline {
        }
     }
         
-//    stage('Test'){
-//      steps{
-//        withGradle {
-//          sh './gradlew test'
-//        }
-//      }  
-//    }
+    stage('Test'){
+      steps{
+        withGradle {
+          sh './gradlew test'
+        }
+      }  
+    }
         
         stage('Building our image') { 
             steps {
@@ -43,13 +43,13 @@ pipeline {
             }
        } 
         
-//     stage("Quality Gate") {
-//          steps {
-//             timeout(time: 2, unit: 'MINUTES') {
-//                 waitForQualityGate abortPipeline: true
-//             }         
-//          }
-//         }
+     stage("Quality Gate") {
+          steps {
+             timeout(time: 1, unit: 'MINUTES') {
+                 waitForQualityGate abortPipeline: true
+             }         
+          }
+         }
     
     
 //    stage('pushes our image') { 
