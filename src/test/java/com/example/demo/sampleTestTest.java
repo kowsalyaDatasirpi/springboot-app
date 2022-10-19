@@ -7,7 +7,7 @@ class sampleTestTest {
     @Test
     void addtwonum(){
 
-        sampletest sumofnum = new sampletest();
+        sampleTest sumofnum = new sampleTest();
         assertEquals(4, sumofnum.add(2, 2));
     }
 
