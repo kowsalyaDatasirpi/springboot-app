@@ -13,17 +13,15 @@ pipeline {
          steps {
             sh 'java -version'
             sh 'chmod +x gradlew'
-           sh "./gradlew assemble -PbuildNumber=${env.BUILD_ID} -PbranchName=${env.BRANCH_NAME}"
+           sh "./gradlew assemble" 
        }
     }
-        
-    stage('Test'){
-      steps{
-        withGradle {
-          sh './gradlew clean test'
+        stage('Test') {
+            steps {
+                sh './gradlew test'
+            }
         }
-      }  
-    }
+        
         
 //        stage('Building our image') { 
 //            steps {
