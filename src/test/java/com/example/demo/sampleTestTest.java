@@ -8,7 +8,7 @@ class sampleTestTest {
     void addtwonum(){
 
         sampleTest sumofnum = new sampleTest();
-        assertEquals(4, sumofnum.add(2, 2));
+        assertEquals(12, sumofnum.add(4, 3));
     }
 
 }
