@@ -1,9 +1,9 @@
 pipeline { 
-    environment { 
-        registry = "kowsalya1809/kss" 
-        registryCredential = 'kowsalya-dockerhub' 
-        dockerImage = '' 
-    }
+//    environment { 
+//        registry = "kowsalya1809/kss" 
+//        registryCredential = 'kowsalya-dockerhub' 
+//        dockerImage = '' 
+//    }
     agent any 
  // triggers{
  //       cron('45 9 * * *')
